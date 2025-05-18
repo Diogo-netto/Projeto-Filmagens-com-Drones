@@ -1,0 +1,684 @@
+
+
+/* Reset de margem e padding padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    overflow: hidden; /* Remove rolagem horizontal e vertical */
+    margin: 0; /* Garante que não há margem que cause overflow */
+    overflow-y: scroll;
+ }
+
+    /* Esconder a scrollbar no WebKit (Chrome, Safari, etc.) */
+  body::-webkit-scrollbar {
+    display: none;
+}
+
+ 
+
+
+header {
+    color: white;
+    height: 20vh;
+    position: relative;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, 
+    #000000 0%, 
+    #0a2e0a 30%, 
+    #0d420d 50%, 
+    #0a2e0a 70%, 
+    #000000 100%);
+  }
+  
+
+  
+  /* MENU E LOGO */
+  .menu-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+    
+.menu-nav a:hover {
+    transform: scale(1.1);
+    
+}
+
+
+.dropdown > a {
+    display: flex;
+  }
+
+ .close-icon {
+    display: none;
+    
+  }
+
+  
+
+  
+  /* LOGO */
+  .logo a{
+    width: 95px;
+  }
+
+
+  
+  /* NAVEGAÇÃO */
+   nav {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  nav a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    font-size: 19px;
+    padding: 15px;
+  }
+
+  
+
+  
+
+  .foto {
+    position: relative;
+    width: 100%;
+    height: 450px; /* ajuste para a altura desejada */
+    overflow: hidden; /* esconde partes que ultrapassam a altura */
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.foto .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.885); /* Escurece a imagem com uma camada preta semi-transparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.foto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.foto p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+
+  
+ 
+  
+  
+
+/* Estilo do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    top: 60%; 
+    left: -50px; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    color: white;
+    padding: 15px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(5, 5, 5, 0.2);
+    z-index: 1000;
+    min-width: 150px; 
+}
+
+.dropdown-content a {
+    display: block; 
+    font-size: 1.015rem; 
+    color: white;
+    text-decoration: none;
+    padding: 8px 35px; 
+    border-radius: 5px; 
+    white-space: nowrap; 
+    text-align: left; 
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Mostra o dropdown ao passar o mouse */
+}
+
+
+
+/* Estilo especial com span  AZUL */
+.dropdown-content span {
+    display: block; 
+}
+
+.dropdown-content span a.especial {
+    color: rgb(247, 247, 249); 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.dropdown-content span.especial:hover {
+    color: darkblue; 
+}
+
+
+
+.dropdown i {
+    position: relative;
+    top: 1px; /* ajuste esse valor conforme a necessidade */
+    font-size: 15px; /* opcional: ajuste o tamanho do ícone */
+    padding: 5px;
+  }
+
+  
+
+/* Esconde o menu de navegação quando a tela for pequena */
+.menu-icon {
+    display: none;
+  }
+
+
+
+
+
+
+
+/* section */
+
+.card-container {
+    display: flex;
+    gap: 5rem;
+    padding: 2rem;
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin-top: 35px;
+}
+
+/* Estilo dos cards */
+.card {
+    background: #f3f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícones nos cards */
+.card-icon {
+    font-size: 2.5rem;
+    color: #139702;
+    margin-bottom: 1rem;
+}
+
+/* Títulos dos cards */
+.card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Texto dentro dos cards */
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+
+
+
+
+
+
+/* Estilo geral da seção */
+.inspection-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Cada item de inspeção */
+.inspection-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a imagem */
+.image-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+.image-wrapper img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    border: 5px solid #139702; 
+    object-fit: cover; 
+}
+
+/* Estilo para o conteúdo */
+.content-wrapper {
+    flex: 2;
+}
+
+.content-wrapper h2 {
+    font-size: 24px;
+    color:#139702;
+    margin-bottom: 10px;
+}
+
+.content-wrapper p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Botão de chamada para ação */
+.cta-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color:#139702;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color:#139702;
+}
+
+
+
+
+
+.video {
+    position: relative;
+    width: 100%;  
+    height: 100vh;  
+    overflow: hidden;  
+}
+
+.video video {
+    position: absolute; 
+    top: 0; left: 0; right: 0; bottom: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+
+
+
+.footer {
+    background: linear-gradient(135deg, 
+    #000000 0%, 
+    #0a2e0a 30%, 
+    #0d420d 50%, 
+    #0a2e0a 70%, 
+    #000000 100%);
+    color: white; 
+    padding: 1px 50px; /* Aumentei o padding vertical */
+    text-align: center;
+    position: relative; 
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin-top: 2px; 
+}
+
+/* Alinha os elementos dentro do footer em uma linha */
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+/* Logo à esquerda */
+.footer-content img {
+    width: 120px;
+}
+
+/* Texto no centro */
+.footer-content p {
+    font-size: 18px;
+    text-align: center;
+    margin-left: 150px;
+    font-weight: 700;
+}
+
+/* Estilo dos links com ícones */
+.footer-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px; 
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer-link:hover {
+    transform: scale(1.2);
+}
+
+/* Adiciona espaçamento entre os itens */
+.footer-content a {
+    margin-left: 50px;
+}
+
+
+
+
+
+/* Estiliza o link da seta */
+#scroll-to {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;  
+    z-index: 1000; 
+    background-color: #000; 
+    border-radius: 50%; 
+    padding: 10px; 
+    text-align: center;
+}
+
+/* Estiliza a imagem da seta */
+#scroll-to img {
+    width: 40px; 
+    height: auto;
+    filter: invert(100%) brightness(100%); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .menu {
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+  
+    nav.menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 250px;
+      height: 80vh;
+      background-color: #000000;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 80px;
+      padding-left: 20px;
+      gap: 20px;
+      border-radius: 10px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+  
+    nav.menu.active {
+      left: 0;
+    }
+  
+    .menu-icon {
+      display: block;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      margin-right: 40px;
+    }
+  
+    .dropdown {
+      position: relative;
+      
+    }
+  
+    .dropdown-content {
+      position: static;
+      display: none;
+      flex-direction: column;
+      
+      
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: flex;
+      background: linear-gradient(135deg, 
+    #0a2e0a 0%, 
+    #1a5f1a 50%, 
+    #0a2e0a 100%);
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        margin-right: 40px;
+      }
+    
+      .close-icon {
+        display: none; /* Oculta o ícone de fechar por padrão */
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001; /* Garante que o ícone de fechar fique acima do menu */
+      }
+       /* Exibe o ícone de fechar quando o menu está ativo */
+  nav.menu.active .close-icon {
+    display: block;
+  }
+    
+  }
+
+
+
+
+
+
+
+
+/* Media Queries Responsivas */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 coluna em tablets */
+        justify-content: center;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .part3 h1,
+    .content-container h2,
+    .content-container p {
+        text-align: center;
+    }
+
+
+
+
+
+    .inspection-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px; /* Espaçamento entre os elementos */
+    }
+
+    /* Ajuste para a imagem */
+    .image-wrapper img {
+        width: 120px; /* Reduz o tamanho da imagem para telas menores */
+        height: 120px;
+        object-fit: cover; /* Garante que a imagem preencha o círculo sem distorção */
+    }
+
+    /* Ajuste para o conteúdo */
+    .content-wrapper {
+        padding: 10px; /* Adiciona espaçamento interno */
+        text-align: center; /* Centraliza o texto */
+        word-wrap: break-word; /* Quebra palavras longas */
+        overflow-wrap: break-word; /* Suporte para navegadores modernos */
+    }
+
+    /* Ajuste para o botão (se necessário) */
+    .content-wrapper button {
+        width: 100%; /* Faz o botão ocupar toda a largura disponível */
+        margin-top: 10px; /* Adiciona espaço superior */
+    }
+
+    .cta-button {
+        width: 80%; /* Ajusta o botão para não ficar tão largo */
+        max-width: 300px;
+    }
+  
+}
+
+
+@media (max-width: 480px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Organização inicial em coluna para ajustes em telas menores */
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .footer-row {
+        display: flex;
+        justify-content: space-between; /* Logo à esquerda e ícones à direita */
+        align-items: center;
+        width: 100%; /* Ocupa toda a largura do footer */
+        padding: 0 15px; /* Espaçamento lateral */
+        flex-wrap: nowrap; /* Evita quebra de linha */
+    }
+    
+    
+    
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Organiza os elementos em coluna */
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center; /* Alinha o texto ao centro */
+        gap: 15px; /* Espaçamento entre os itens */
+    }
+
+    .footer-content img {
+        max-width: 100px; /* Ajuste do tamanho da logo */
+        
+    }
+
+    .footer-content p {
+        margin: 10px 0;
+        font-size: 18px; /* Ajuste do tamanho do texto */
+        line-height: 1.5; /* Melhor espaçamento entre linhas */
+    }
+    .icones {
+        display: flex; /* Aplica o layout flexbox */
+        justify-content: center; /* Centraliza os ícones horizontalmente */
+        align-items: center; /* Centraliza os ícones verticalmente */
+        gap: 10px; /* Espaçamento entre os ícones */
+        margin-right: 45px;
+    }
+    
+    .icones a {
+        font-size: 27px; /* Tamanho dos ícones */
+        color: #f7f6f6; /* Cor dos ícones (ajuste se necessário) */
+        text-decoration: none; /* Remove sublinhado nos links */
+        margin-bottom: 15px;
+    }
+
+
+    
+
+    #scroll-to {
+        bottom: 10px; /* Ajusta a distância do rodapé */
+        left: 250px; /* Move a seta para a esquerda */
+        right: auto; /* Remove a posição à direita */
+        padding: 8px; /* Reduz o espaçamento interno */
+    }
+
+    #scroll-to img {
+        width: 30px; /* Reduz o tamanho da seta */
+    }
+}
+

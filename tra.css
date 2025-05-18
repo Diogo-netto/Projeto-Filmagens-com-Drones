@@ -1,0 +1,604 @@
+/* Reset e fonte global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+}
+
+/* Corpo da página */
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* Oculta a barra de rolagem horizontal */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+header {
+    color: white;
+    height: 20vh;
+    position: relative;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, 
+    #000000 0%, 
+    #0a2e0a 30%, 
+    #0d420d 50%, 
+    #0a2e0a 70%, 
+    #000000 100%);
+  }
+  
+
+  
+  /* MENU E LOGO */
+  .menu-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+    
+.menu-nav a:hover {
+    transform: scale(1.1);
+    
+}
+
+
+.dropdown > a {
+    display: flex;
+  }
+
+ .close-icon {
+    display: none;
+    
+  }
+
+  
+
+  
+  /* LOGO */
+  .logo a{
+    width: 95px;
+  }
+
+
+  
+  /* NAVEGAÇÃO */
+   nav {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  nav a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    font-size: 19px;
+    padding: 15px;
+  }
+
+  
+
+  
+  
+ 
+  .foto {
+    position: relative;
+    width: 100%;
+    height: 450px; /* ajuste para a altura desejada */
+    overflow: hidden; /* esconde partes que ultrapassam a altura */
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.foto .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.885); /* Escurece a imagem com uma camada preta semi-transparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.foto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.foto p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+  
+  /* Overlay escuro no vídeo */
+  .video::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.774); /* Escurece o vídeo */
+      z-index: 2; /* Coloca o overlay acima do vídeo */
+  }
+
+
+  
+ 
+  
+  
+
+/* Estilo do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    top: 60%; 
+    left: -50px; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    color: white;
+    padding: 15px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(5, 5, 5, 0.2);
+    z-index: 1000;
+    min-width: 150px; 
+}
+
+.dropdown-content a {
+    display: block; 
+    font-size: 1.015rem; 
+    color: white;
+    text-decoration: none;
+    padding: 8px 35px; 
+    border-radius: 5px; 
+    white-space: nowrap; 
+    text-align: left; 
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Mostra o dropdown ao passar o mouse */
+}
+
+
+
+/* Estilo especial com span  AZUL */
+.dropdown-content span {
+    display: block; 
+}
+
+.dropdown-content span a.especial {
+    color: rgb(247, 247, 249); 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.dropdown-content span.especial:hover {
+    color: darkblue; 
+}
+
+
+
+.dropdown i {
+    position: relative;
+    top: 1px; /* ajuste esse valor conforme a necessidade */
+    font-size: 15px; /* opcional: ajuste o tamanho do ícone */
+    padding: 5px;
+  }
+
+  
+
+/* Esconde o menu de navegação quando a tela for pequena */
+.menu-icon {
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+/* Estilo geral da seção */
+#portfolio {
+    padding: 5rem;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+#portfolio h2 {
+    font-size: 2.5rem;
+    color:#139702;
+    margin-bottom: 5rem;
+}
+
+
+
+
+/* Galeria de Fotos */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.photo-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.1);
+}
+
+/* Galeria de Vídeos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.video-grid video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo dos subtítulos */
+h3 {
+    font-size: 1.75rem;
+    color: #000000;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+
+
+
+
+
+
+
+
+
+body.lightbox-active {
+    overflow: hidden;
+}
+
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#lightbox.hidden {
+    display: none;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+#lightbox img.zoomed {
+    transform: scale(2);
+    cursor: zoom-out;
+}
+
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    cursor: grab;
+    transition: transform 0.1s ease;
+}
+
+
+
+
+
+
+
+
+
+.footer {
+    background: linear-gradient(135deg, 
+    #000000 0%, 
+    #0a2e0a 30%, 
+    #0d420d 50%, 
+    #0a2e0a 70%, 
+    #000000 100%);
+    color: white; 
+    padding: 1px 50px; /* Aumentei o padding vertical */
+    text-align: center;
+    position: relative; 
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin-top: 2px; 
+}
+
+/* Alinha os elementos dentro do footer em uma linha */
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+/* Logo à esquerda */
+.footer-content img {
+    width: 120px;
+}
+
+/* Texto no centro */
+.footer-content p {
+    font-size: 18px;
+    text-align: center;
+    margin-left: 150px;
+    font-weight: 700;
+}
+
+/* Estilo dos links com ícones */
+.footer-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px; 
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer-link:hover {
+    transform: scale(1.2);
+}
+
+/* Adiciona espaçamento entre os itens */
+.footer-content a {
+    margin-left: 50px;
+}
+
+
+
+
+
+/* Estiliza o link da seta */
+#scroll-to {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;  
+    z-index: 1000; 
+    background-color: #000; 
+    border-radius: 50%; 
+    padding: 10px; 
+    text-align: center;
+}
+
+/* Estiliza a imagem da seta */
+#scroll-to img {
+    width: 40px; 
+    height: auto;
+    filter: invert(100%) brightness(100%); 
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .menu {
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+  
+    nav.menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 250px;
+      height: 80vh;
+      background-color: #000000;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 80px;
+      padding-left: 20px;
+      gap: 20px;
+      border-radius: 10px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+  
+    nav.menu.active {
+      left: 0;
+    }
+  
+    .menu-icon {
+      display: block;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      margin-right: 40px;
+    }
+  
+    .dropdown {
+      position: relative;
+      
+    }
+  
+    .dropdown-content {
+      position: static;
+      display: none;
+      flex-direction: column;
+      
+      
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: flex;
+      background: linear-gradient(135deg, 
+    #0a2e0a 0%, 
+    #1a5f1a 50%, 
+    #0a2e0a 100%);
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        margin-right: 40px;
+      }
+    
+      .close-icon {
+        display: none; /* Oculta o ícone de fechar por padrão */
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001; /* Garante que o ícone de fechar fique acima do menu */
+      }
+       /* Exibe o ícone de fechar quando o menu está ativo */
+  nav.menu.active .close-icon {
+    display: block;
+  }
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsividade para telas menores que 480px (smartphones pequenos) */
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem;
+    }
+
+    .menu a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .photo-grid, .video-grid {
+        gap: 5px; /* Reduz o espaçamento entre imagens e vídeos */
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Organiza os elementos em coluna */
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center; /* Alinha o texto ao centro */
+        gap: 10px; /* Espaçamento entre os itens */
+    }
+
+
+    .footer-row {
+        display: flex;
+        justify-content: space-between; /* Logo à esquerda e ícones à direita */
+        align-items: center;
+        width: 100%; /* Ocupa toda a largura do footer */
+        padding: 0 15px; /* Espaçamento lateral */
+        flex-wrap: nowrap; /* Evita quebra de linha */
+    }
+
+    .footer-content img {
+        max-width: 100px; /* Ajuste do tamanho da logo */
+        
+    }
+
+    .footer-content p {
+        margin: 10px 0;
+        font-size: 18px; /* Ajuste do tamanho do texto */
+        line-height: 1.5; /* Melhor espaçamento entre linhas */
+    }
+    .icones {
+        display: flex; /* Aplica o layout flexbox */
+        justify-content: center; /* Centraliza os ícones horizontalmente */
+        align-items: center; /* Centraliza os ícones verticalmente */
+        gap: 10px; /* Espaçamento entre os ícones */
+        margin-right: 45px;
+    }
+    
+    .icones a {
+        font-size: 27px; /* Tamanho dos ícones */
+        color: #f7f6f6; /* Cor dos ícones (ajuste se necessário) */
+        text-decoration: none; /* Remove sublinhado nos links */
+        margin-bottom: 15px;
+    }
+
+
+    
+
+    #scroll-to {
+        bottom: 10px; /* Ajusta a distância do rodapé */
+        left: 250px; /* Move a seta para a esquerda */
+        right: auto; /* Remove a posição à direita */
+        padding: 8px; /* Reduz o espaçamento interno */
+    }
+
+    #scroll-to img {
+        width: 30px; /* Reduz o tamanho da seta */
+    }
+
+    
+.footer-content .social-icons {
+    display: flex;
+    gap: 10px; /* Ícones lado a lado */
+}
+}
+
+    

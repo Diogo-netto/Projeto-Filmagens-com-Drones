@@ -1,0 +1,450 @@
+
+
+/* Em vez disso, adicione um overlay diretamente no background */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), /* Overlay escuro */
+        url('img/pexels-orbital101studio-18660498.webp') center/cover fixed no-repeat;
+}
+
+/* Oculta a barra de rolagem horizontal */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Estilo do header com flexbox para centralizar conteúdo */
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Estilo da logo com animação de hover */
+.logo {
+    padding: 0.3125rem 3.125rem;
+    margin-top: -0.9375rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo do menu no header */
+.menu {
+    margin-top: -1.75rem; /* -28px */
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 2.1875rem; /* 35px */
+    transition: transform 0.3s ease-in-out color 0.3s ease-in-out;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.125rem; /* 18px */
+    color: white;
+}
+
+/* Esconde o menu de navegação quando a tela for pequena */
+.menu-icon {
+    display: none;
+  }
+
+
+  
+.menu a:hover {
+    transform: scale(1.2);
+    color: #139702;
+}
+
+
+
+
+
+/* Estilo do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: -50px; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    color: white;
+    padding: 15px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 150px; 
+}
+
+.dropdown-content a {
+    display: block; 
+    font-size: 1.015rem; 
+    color: white;
+    text-decoration: none;
+    padding: 8px 35px; 
+    border-radius: 5px; 
+    white-space: nowrap; 
+    text-align: left; 
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Mostra o dropdown ao passar o mouse */
+}
+
+
+
+/* Estilo especial com span  AZUL */
+.dropdown-content span {
+    display: block; 
+}
+
+.dropdown-content span a.especial {
+    color: rgb(247, 247, 249); 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.dropdown-content span.especial:hover {
+    color: darkblue; 
+}
+
+
+
+.dropdown i {
+    position: relative;
+    top: 1px; /* ajuste esse valor conforme a necessidade */
+    font-size: 15px; /* opcional: ajuste o tamanho do ícone */
+  }
+
+
+
+
+
+/* Estilos do container principal com flexbox */
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem; /* 80px */
+    gap: 0.625rem; /* 10px */
+}
+
+/* Estilo do conteúdo de texto */
+.text-content {
+    color: #fcfafa;
+    padding: 0px 5.625rem; /* 90px */
+}
+
+.text-content p {
+    font-weight: 700;
+    margin-top: 0.625rem; /* 10px */
+}
+
+/* Estilo da seção extra com botões */
+.extra-content {
+    display: flex;
+    flex-direction: column; /* Mantém os elementos empilhados */
+    align-items: center; /* Centraliza os itens */
+    margin-top: 1.875rem; /* 30px */
+}
+
+
+
+/* Estilo do botão de informação */
+.info-button {
+    background-color: transparent;
+    color: #faf9f9;
+    border: 0.125rem solid #139702; /* 2px */
+    padding: 10px;
+    border-radius: 0.9375rem; /* 15px */
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: #139702;
+    color: white;
+    border: 0.125rem solid #139702; /* 2px */
+}
+
+/* Estilo do botão de chamada para ação */
+
+.cta-button   {
+    background-color: transparent;
+    color: #f8f6f6;
+    border: 0.125rem solid #139702; /* 2px */
+    padding: 10px;
+    border-radius: 0.9375rem; /* 15px */
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.cta-button:hover {
+    background-color: #139702;
+    color: white;
+    border: 0.125rem solid #139702; /* 2px */
+}
+
+/* Estilos para os ícones */
+.bi {
+    padding: 0.3125rem; /* 5px */
+}
+
+.link-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5625rem; /* 25px */
+    position: relative;
+    top: 4.375rem; /* 70px */
+    left: 40.625rem; /* 650px */
+    z-index: 10; /* 👈 Coloca os links acima de outros elementos */
+}
+
+.link-container a {
+    color: #fbfbfb;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.link-container a:hover {
+    color: #139702;
+}
+
+/* Estilos para os ícones das fontes */
+.fa-regular {
+    padding: 0.3125rem; /* 5px */
+    font-size: 1.1875rem; /* 19px */
+}
+
+.fa-brands {
+    padding: 0.3125rem; /* 5px */
+    font-size: 1.1875rem; /* 19px */
+}
+
+
+.imagem {
+    margin-top: -50px; /* ajuste esse valor conforme necessário */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    
+    .text-content {
+        padding: 0 2rem;
+        text-align: center;
+    }
+    
+    .imagem {
+        margin-top: 2rem;
+        width: 80%;
+        max-width: 500px;
+    }
+    
+    .link-container {
+        justify-content: center;
+        position: static;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info-button {
+        margin-bottom: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .imagem {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .header {
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
+        position: relative;
+        z-index: 1000;
+    }
+    
+    /* Menu Mobile - Versão Deslizante */
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width:170px;
+        height: 90vh;
+        background: linear-gradient(135deg, 
+        #000000 0%, 
+        #0a2e0a 30%, 
+        #0d420d 50%, 
+        #0a2e0a 70%, 
+        #000000 100%);
+        display: flex;
+        flex-direction: column;
+        transition: left 0.3s ease-out;
+        z-index: 1001;
+        padding-top: 80px;
+        border-radius: 5px;
+    }
+    
+    .menu.active {
+        left: 0;
+        display: flex;
+    }
+    
+    .menu a {
+        padding: 1rem;
+        width: 80%;
+        text-align: left;
+        
+    }
+
+
+    .dropdown i {
+        position: relative;
+        top: 1px; /* ajuste esse valor conforme a necessidade */
+        font-size: 14px; /* opcional: ajuste o tamanho do ícone */
+      }
+
+    
+
+    /* Dropdown Mobile - Ajustado */
+    .dropdown {
+        display: block;
+        position: static;
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: #000000;
+        width: 200%;
+        height: 150px;
+        display: none;
+        padding: 0;
+        z-index: 1002;
+    }
+
+   
+
+    .dropdown-content a {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        text-align: left;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    /* Menu Icon - Ajustado */
+    .menu-icon {
+        display: block;
+        font-size: 2.1rem;
+        color: white;
+        cursor: pointer;
+        z-index: 1002;
+        position: relative;
+        width: auto;
+        padding: 10px;
+        margin-bottom: 10px;
+        margin-right: 85px;
+    }
+
+    /* Overlay para o menu */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1000;
+        display: none;
+    }
+
+    /* Container e conteúdo geral */
+    .container {
+        margin-top: 85px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .background img, body::after {
+        height: 110vh;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .text-content h1 {
+        width: 100%;
+        font-size: 2rem;
+    }
+    
+    .text-content p {
+        width: 92%;
+        font-size: 1rem;
+        margin-left: 15px;
+    }
+
+    .info-button {
+        margin-bottom: 1rem;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .cta-button {
+        width: 100%;
+        margin-right: 5px;
+        padding: 18px;
+    }
+}

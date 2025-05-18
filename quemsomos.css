@@ -1,0 +1,314 @@
+/* Em vez disso, adicione um overlay diretamente no background */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background:linear-gradient(rgba(0, 0, 0, 0.904), rgba(0, 0, 0, 0.904)), /* Overlay escuro */
+        url('img/pexels-orbital101studio-18660498.webp') center/cover fixed no-repeat;
+}
+
+
+
+/* Remove a barra de rolagem */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilo do header com flexbox para centralizar conteúdo */
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Estilo da logo com animação de hover */
+.logo {
+    padding: 0.3125rem 3.125rem;
+    margin-top: 25px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo do menu no header */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 25px;
+    
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 2.1875rem; /* 35px */
+    transition: transform 0.3s ease-in-out color 0.3s ease-in-out;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.125rem; /* 18px */
+    color: white;
+}
+
+/* Esconde o menu de navegação quando a tela for pequena */
+.menu-icon {
+    display: none;
+  }
+
+
+  
+.menu a:hover {
+    transform: scale(1.2);
+    color: #139702;
+}
+
+
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    color: #139702;
+}
+
+.dropdown-content span a.especial:hover {
+    color: darkblue;
+}
+
+
+
+.dropdown i {
+    position: relative;
+    top: 1px; /* ajuste esse valor conforme a necessidade */
+    font-size: 15px; /* opcional: ajuste o tamanho do ícone */
+    padding: 5px;
+  }
+
+
+   
+
+
+/* Texto sobre a imagem */
+.text-overlay {
+    position: relative;
+    max-width: 60.625rem;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.616);
+    border-radius: 0.75rem;
+    color: #ffffff;
+    text-align: left;
+    z-index: 10;
+}
+
+.text-overlay h1 {
+    font-size: 2.1875rem;
+    margin-bottom: 1.875rem;
+    text-align: center;
+}
+
+.text-overlay p {
+    font-size: 1.1875rem;
+    line-height: 1.4;
+    margin: 0.625rem 0;
+}
+
+.text-overlay ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.text-overlay li {
+    line-height: 1.8;
+}
+
+.text-overlay strong {
+    color: #139702;
+}
+
+
+
+
+
+/* Botão */
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* para evitar quebra em telas pequenas */
+    gap: 15em; /* espaçamento entre o botão e os links */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn button {
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border: 2px solid #151515;
+    border-radius: 1.5625rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn button:hover {
+    background-color: #139702;
+    color: white;
+    border-color: #139702;
+}
+
+/* Links na tela */
+.link-container {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.link-container a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.link-container a:hover {
+    color: #139702;
+}
+
+/* Ícones */
+.fa-regular, .fa-brands {
+    padding: 0.3125rem;
+    font-size: 1.1875rem;
+    color: white;
+}
+
+a:hover .fa-regular,
+a:hover .fa-brands {
+    color: green;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .header {
+      width: 100%;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .logo {
+        margin-right: 5px;
+    }
+  
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0;
+        margin-left: 25px;
+    }
+  
+    .menu a {
+    
+      padding: 1rem;
+      font-size: 1rem;
+    }
+  
+  
+  
+    .text-overlay {
+      width: 95%;
+      padding: 1.5rem;
+    }
+  
+    .cta-container, .btn button {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      margin-right: 190px;
+    }
+  
+    .cta-container, .link-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+
+    .menu .dropdown-content a {
+        font-size: 15px;
+    }
+  
+   /* Para o dropdown em telas menores */
+   .menu .dropdown-content {
+    position: absolute;  /* Coloca o dropdown abaixo do link */
+    top: 100%;  /* Ajusta para aparecer abaixo do item */
+    left: -120px;  /* Alinha à esquerda do item de menu */
+    z-index: 1200;  /* Garante que o dropdown fique sobre outros elementos */
+    padding: 10px;
+    background: linear-gradient(135deg, 
+            #000000 0%, 
+            #0a2e0a 30%, 
+            #0d420d 50%, 
+            #0a2e0a 70%, 
+            #000000 100%);
+    
+   
+    }
+
+
+
+    
+  }
+  

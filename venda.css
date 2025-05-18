@@ -1,0 +1,838 @@
+/* HEADER GERAL */
+
+/* Reset de margem e padding padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    overflow: hidden; /* Remove rolagem horizontal e vertical */
+    margin: 0; /* Garante que não há margem que cause overflow */
+    overflow-y: scroll;
+ }
+
+    /* Esconder a scrollbar no WebKit (Chrome, Safari, etc.) */
+  body::-webkit-scrollbar {
+    display: none;
+}
+
+ 
+
+
+header {
+    color: white;
+    height: 20vh;
+    position: relative;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, 
+    #000000 0%, 
+    #0a2e0a 30%, 
+    #0d420d 50%, 
+    #0a2e0a 70%, 
+    #000000 100%);
+  }
+  
+
+  
+  /* MENU E LOGO */
+  .menu-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+    
+.menu-nav a:hover {
+    transform: scale(1.1);
+    
+}
+
+
+.dropdown > a {
+    display: flex;
+  }
+
+ .close-icon {
+    display: none;
+    
+  }
+
+  
+
+  
+  /* LOGO */
+  .logo a{
+    width: 95px;
+  }
+
+
+  
+  /* NAVEGAÇÃO */
+   nav {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  nav a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    font-size: 19px;
+    padding: 15px;
+  }
+
+  
+
+  
+
+  .foto {
+    position: relative;
+    width: 100%;
+    height: 450px; /* ajuste para a altura desejada */
+    overflow: hidden; /* esconde partes que ultrapassam a altura */
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.foto .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.885); /* Escurece a imagem com uma camada preta semi-transparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.foto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.foto p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+
+  
+ 
+  
+  
+
+/* Estilo do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    top: 60%; 
+    left: -50px; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    color: white;
+    padding: 15px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(5, 5, 5, 0.2);
+    z-index: 1000;
+    min-width: 150px; 
+}
+
+.dropdown-content a {
+    display: block; 
+    font-size: 1.015rem; 
+    color: white;
+    text-decoration: none;
+    padding: 8px 35px; 
+    border-radius: 5px; 
+    white-space: nowrap; 
+    text-align: left; 
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Mostra o dropdown ao passar o mouse */
+}
+
+
+
+/* Estilo especial com span  AZUL */
+.dropdown-content span {
+    display: block; 
+}
+
+.dropdown-content span a.especial {
+    color: rgb(247, 247, 249); 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.dropdown-content span.especial:hover {
+    color: darkblue; 
+}
+
+
+
+.dropdown i {
+    position: relative;
+    top: 1px; /* ajuste esse valor conforme a necessidade */
+    font-size: 15px; /* opcional: ajuste o tamanho do ícone */
+    padding: 5px;
+  }
+
+  
+
+/* Esconde o menu de navegação quando a tela for pequena */
+.menu-icon {
+    display: none;
+  }
+  
+ 
+ 
+  
+
+
+
+
+
+
+/* Container do Card */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 10px; /* Espaçamento entre os cards */
+    padding: 20px;
+    justify-content: center;
+    margin-top: 50px;
+    cursor: pointer;
+  
+  }
+
+
+.flip-box {
+    width: 330px;
+    height: 399px;
+    perspective: 1000px; /* Define a perspectiva 3D */
+    margin: 20px auto;
+  }
+  
+  /* Área interna que realiza o flip */
+  .flip-box-inner {
+    position: relative;
+    width: 110%;
+    height: 109%;
+    text-align: center;
+    transition: transform 0.8s; /* Duração da animação */
+    transform-style: preserve-3d; /* Mantém o 3D */
+  }
+  
+  /* Parte da frente e de trás do card */
+  .flip-box-front,
+  .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde a face que não está visível */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #139702;
+    border-radius: 10px;
+    box-shadow: rgba(1, 254, 22, 0.849) 0px 5px 15px;
+    
+  }
+  
+  /* Frente do card */
+  .flip-box-front {
+    background-color: #ffffff;
+    color: black;
+  }
+
+  .flip-box-front h3 {
+    font-weight: 800;
+  }
+
+  .flip-box-front img {
+    width: 110px;
+  }
+
+  .bi {
+    font-size: 50px;
+    margin-bottom: 29px
+  }
+  
+  /* Trás do card */
+  .flip-box-back {
+    background-color:#139702;
+    color: #fff;
+    transform: rotateX(180deg); /* Vira a parte de trás inicialmente */
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 10px;
+  }
+
+
+  button {
+    background-color: #fafbfc; /* Cor de fundo azul */
+    color: #139702; /* Cor do texto branca */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Borda levemente arredondada */
+    padding: 8px 42px; /* Espaçamento interno */
+    font-size: 14px; /* Tamanho do texto */
+    cursor: pointer; /* Cursor em forma de mão ao passar o mouse */
+    transition: background-color 0.3s ease; /* Efeito suave na mudança de cor */
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: rgb(41, 4, 255); /* Cor mais escura ao passar o mouse */
+    color: black;
+  }
+  
+  button:active {
+    background-color: #fefeff; /* Cor mais escura ao clicar */
+    transform: scale(0.98); /* Leve redução no tamanho ao clicar */
+  }
+  
+
+
+  .flip-box-back p {
+    font-size: 16px;
+  }
+  
+  /* Efeito do flip */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateX(180deg); /* Gira o card ao passar o mouse */
+  }
+  
+
+
+  .part3 h1 {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 25px;
+    margin-bottom: 75px;
+    color: black;
+    font-weight: 800;
+  }
+
+
+
+
+  .section-background {
+    background-image: url('img/pexels-line-knipst-574109081-19687415.webp'); /* Caminho da imagem */
+    background-size: cover; /* Faz com que a imagem cubra toda a seção */
+    background-position: center; /* Centraliza a imagem */
+    position: relative; /* Necessário para usar ::before */
+    color: #fff; /* Cor do texto em branco */
+    padding: 50px 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+.section-background::before {
+    content: ''; /* Cria um elemento vazio */
+    position: absolute; /* Faz com que o ::before cubra o elemento */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.793); /* Cor preta com 50% de opacidade */
+    z-index: 1; /* Garante que o overlay fique abaixo do conteúdo */
+}
+
+.content-container {
+    position: relative; /* Garante que o conteúdo fique acima do overlay */
+    padding: 50px; /* Espaçamento interno para o conteúdo */
+    border-radius: 10px; /* Bordas arredondadas */
+    display: inline-block; /* Faz o contêiner ter largura mínima */
+    max-width: 1200px; /* Largura máxima para evitar que o texto fique muito espalhado */
+    margin: auto; /* Centraliza o contêiner */
+    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
+}
+
+h2 {
+    font-size: 29px; /* Tamanho do título */
+    margin-bottom: 10px; /* Espaço entre o título e o texto */
+    font-weight: 800;
+}
+
+p {
+    font-size: 17px; /* Tamanho do texto */
+    line-height: 1.8; /* Altura das linhas para facilitar a leitura */
+    margin-bottom: 20px; /* Espaço entre os parágrafos */
+    font-weight: 700;
+}
+
+
+.content-container span{
+     color: #139702;
+}
+
+
+
+
+
+
+.footer {
+    background: linear-gradient(135deg, 
+    #000000 0%, 
+    #0a2e0a 30%, 
+    #0d420d 50%, 
+    #0a2e0a 70%, 
+    #000000 100%);
+    color: white; 
+    padding: 1px 50px; /* Aumentei o padding vertical */
+    text-align: center;
+    position: relative; 
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    margin-top: 2px; 
+}
+
+/* Alinha os elementos dentro do footer em uma linha */
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+/* Logo à esquerda */
+.footer-content img {
+    width: 120px;
+}
+
+/* Texto no centro */
+.footer-content p {
+    font-size: 18px;
+    text-align: center;
+    margin-left: 150px;
+    font-weight: 700;
+}
+
+/* Estilo dos links com ícones */
+.icones a.footer-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px; 
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.icones.footer-link a:hover {
+    transform: scale(1.2);
+}
+
+/* Adiciona espaçamento entre os itens */
+.icones a.footer-link {
+    margin-left: 50px;
+}
+
+
+
+
+
+/* Estiliza o link da seta */
+#scroll-to {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;  
+    z-index: 1000; 
+    background-color: #000; 
+    border-radius: 50%; 
+    padding: 10px; 
+    text-align: center;
+}
+
+/* Estiliza a imagem da seta */
+#scroll-to img {
+    width: 40px; 
+    height: auto;
+    filter: invert(100%) brightness(100%); 
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .menu {
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+  
+    nav.menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 250px;
+      height: 80vh;
+      background-color: #000000;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 80px;
+      padding-left: 20px;
+      gap: 20px;
+      border-radius: 10px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+  
+    nav.menu.active {
+      left: 0;
+    }
+  
+    .menu-icon {
+      display: block;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      margin-right: 40px;
+    }
+  
+    .dropdown {
+      position: relative;
+      
+    }
+  
+    .dropdown-content {
+      position: static;
+      display: none;
+      flex-direction: column;
+      
+      
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: flex;
+      background: linear-gradient(135deg, 
+    #0a2e0a 0%, 
+    #1a5f1a 50%, 
+    #0a2e0a 100%);
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        margin-right: 40px;
+      }
+    
+      .close-icon {
+        display: none; /* Oculta o ícone de fechar por padrão */
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001; /* Garante que o ícone de fechar fique acima do menu */
+      }
+       /* Exibe o ícone de fechar quando o menu está ativo */
+  nav.menu.active .close-icon {
+    display: block;
+  }
+    
+  }
+  
+
+
+
+
+
+
+
+/* ==================== RESPONSIVIDADE MAIN ==================== */
+
+/* Telas Grandes (1200px - 992px) */
+@media (max-width: 1200px) and (min-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .flip-box {
+        width: 100%;
+        max-width: 320px;
+        height: 380px;
+    }
+    
+    .texto {
+        margin-top: 7rem;
+        padding: 0 20px;
+    }
+    
+    .texto h1 {
+        font-size: 2.3rem;
+    }
+    
+    .texto p {
+        font-size: 1.1rem;
+        line-height: 2.0;
+    }
+    
+    .content-container {
+        padding: 30px;
+        max-width: 90%;
+    }
+    
+    .flip-box-back p {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+}
+
+/* Tablets (991px - 768px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .flip-box {
+        width: 100%;
+        max-width: 300px;
+        height: 360px;
+    }
+    
+    .texto {
+        margin-top: 6rem;
+    }
+    
+    .texto h1 {
+        font-size: 2.1rem;
+    }
+    
+    .texto p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+    
+    .part3 h1 {
+        font-size: 2rem;
+    }
+    
+    .content-container {
+        padding: 25px;
+    }
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Organiza os elementos em coluna */
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center; /* Alinha o texto ao centro */
+        gap: 15px; /* Espaçamento entre os itens */
+    }
+
+    .footer-content img {
+        max-width: 100px; /* Ajuste do tamanho da logo */
+        
+    }
+
+    .footer-content p {
+        margin: 10px 0;
+        font-size: 18px; /* Ajuste do tamanho do texto */
+        line-height: 1.5; /* Melhor espaçamento entre linhas */
+    }
+}
+
+
+
+
+
+
+/* Tablets Pequenos (767px - 576px) */
+@media (max-width: 767px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .flip-box {
+        max-width: 280px;
+        height: 340px;
+        margin: 10px auto;
+    }
+    
+    .texto {
+        margin-top: 5rem;
+        padding: 0 15px;
+    }
+    
+    .texto h1 {
+        font-size: 1.8rem;
+    }
+    
+    .texto p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .part3 h1 {
+        font-size: 1.7rem;
+        margin: 30px 0;
+    }
+    
+    .content-container {
+        padding: 20px 15px;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Organiza os elementos em coluna */
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center; /* Alinha o texto ao centro */
+        gap: 15px; /* Espaçamento entre os itens */
+    }
+
+    .footer-content img {
+        max-width: 100px; /* Ajuste do tamanho da logo */
+        
+    }
+
+    .footer-content p {
+        margin: 10px 0;
+        font-size: 18px; /* Ajuste do tamanho do texto */
+        line-height: 1.5; /* Melhor espaçamento entre linhas */
+    }
+}
+
+
+
+
+
+
+
+/* Celulares (575px - 360px) */
+@media (max-width: 575px) {
+    .flip-box {
+        width: 260px;
+        height: 320px;
+    }
+    
+    .texto {
+        margin-top: 4rem;
+    }
+    
+    .texto h1 {
+        font-size: 1.6rem;
+    }
+    
+    .texto p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .part3 h1 {
+        font-size: 1.5rem;
+        margin: 25px 0;
+    }
+    
+    .flip-box-front h3 {
+        font-size: 1.1rem;
+    }
+    
+    .flip-box-back p {
+        font-size: 0.85rem;
+    }
+    
+    button {
+        padding: 6px 30px;
+        font-size: 13px;
+    }
+    
+    #scroll-to img {
+        width: 30px;
+    }
+}
+
+
+
+
+
+
+
+/* Celulares Pequenos (até 359px) */
+@media (max-width: 359px) {
+    .flip-box {
+        width: 240px;
+        height: 300px;
+    }
+    
+    .texto h1 {
+        font-size: 1.4rem;
+    }
+    
+    .texto p {
+        font-size: 0.85rem;
+    }
+    
+    .part3 h1 {
+        font-size: 1.3rem;
+    }
+    
+    .content-container {
+        padding: 15px 10px;
+    }
+    
+    .flip-box-back p {
+        font-size: 0.8rem;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Organiza os elementos em coluna */
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center; /* Alinha o texto ao centro */
+        gap: 15px; /* Espaçamento entre os itens */
+    }
+
+    .footer-content img {
+        max-width: 100px; /* Ajuste do tamanho da logo */
+        
+    }
+
+    .footer-content p {
+        margin: 10px 0;
+        font-size: 18px; /* Ajuste do tamanho do texto */
+        line-height: 1.5; /* Melhor espaçamento entre linhas */
+    }
+}
