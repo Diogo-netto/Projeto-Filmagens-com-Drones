@@ -572,250 +572,83 @@ p {
 
 
 
-/* ==================== RESPONSIVIDADE MAIN ==================== */
+  
 
-/* Telas Grandes (1200px - 992px) */
-@media (max-width: 1200px) and (min-width: 992px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 15px;
-    }
-    
-    .flip-box {
-        width: 100%;
-        max-width: 320px;
-        height: 380px;
-    }
-    
-    .texto {
-        margin-top: 7rem;
-        padding: 0 20px;
-    }
-    
-    .texto h1 {
-        font-size: 2.3rem;
-    }
-    
-    .texto p {
-        font-size: 1.1rem;
-        line-height: 2.0;
-    }
-    
-    .content-container {
-        padding: 30px;
-        max-width: 90%;
-    }
-    
-    .flip-box-back p {
-        font-size: 15px;
-        padding: 0 10px;
-    }
-}
 
-/* Tablets (991px - 768px) */
-@media (max-width: 991px) and (min-width: 768px) {
+
+
+
+  /* ≤ 768px - celulares em geral */
+  @media (max-width: 768px) {
+
+    section {
+        margin-left: -25px;
+    }
+
+
     .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+      grid-template-columns: 1fr;
+      padding: 15px;
     }
-    
+  
     .flip-box {
-        width: 100%;
-        max-width: 300px;
-        height: 360px;
-    }
+      max-width: 280px;
+      height: 340px;
+      margin: 20px auto;
     
+      
+      
+    }
+  
     .texto {
-        margin-top: 6rem;
+      margin-top: 5rem;
+      padding: 0 15px;
     }
-    
+  
     .texto h1 {
-        font-size: 2.1rem;
+      font-size: 1.7rem;
     }
-    
+  
     .texto p {
-        font-size: 1rem;
-        line-height: 1.8;
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
-    
+  
     .part3 h1 {
-        font-size: 2rem;
+      font-size: 1.6rem;
+      margin: 25px;
+      margin-left: 55px;
+      
     }
-    
-    .content-container {
-        padding: 25px;
-    }
-    .footer-content {
-        display: flex;
-        flex-direction: column; /* Organiza os elementos em coluna */
-        align-items: center; /* Centraliza horizontalmente */
-        text-align: center; /* Alinha o texto ao centro */
-        gap: 15px; /* Espaçamento entre os itens */
-    }
-
-    .footer-content img {
-        max-width: 100px; /* Ajuste do tamanho da logo */
-        
-    }
-
-    .footer-content p {
-        margin: 10px 0;
-        font-size: 18px; /* Ajuste do tamanho do texto */
-        line-height: 1.5; /* Melhor espaçamento entre linhas */
-    }
-}
-
-
-
-
-
-
-/* Tablets Pequenos (767px - 576px) */
-@media (max-width: 767px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        padding: 10px;
-    }
-    
-    .flip-box {
-        max-width: 280px;
-        height: 340px;
-        margin: 10px auto;
-    }
-    
-    .texto {
-        margin-top: 5rem;
-        padding: 0 15px;
-    }
-    
-    .texto h1 {
-        font-size: 1.8rem;
-    }
-    
-    .texto p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-    
-    .part3 h1 {
-        font-size: 1.7rem;
-        margin: 30px 0;
-    }
-    
-    .content-container {
-        padding: 20px 15px;
-    }
-    
+  
     h2 {
-        font-size: 1.4rem;
+      font-size: 1.4rem;
     }
-    
+  
     p {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
+      margin-left: 28px;
     }
-    
-    .footer-content {
-        display: flex;
-        flex-direction: column; /* Organiza os elementos em coluna */
-        align-items: center; /* Centraliza horizontalmente */
-        text-align: center; /* Alinha o texto ao centro */
-        gap: 15px; /* Espaçamento entre os itens */
-    }
-
-    .footer-content img {
-        max-width: 100px; /* Ajuste do tamanho da logo */
-        
-    }
-
-    .footer-content p {
-        margin: 10px 0;
-        font-size: 18px; /* Ajuste do tamanho do texto */
-        line-height: 1.5; /* Melhor espaçamento entre linhas */
-    }
-}
-
-
-
-
-
-
-
-/* Celulares (575px - 360px) */
-@media (max-width: 575px) {
-    .flip-box {
-        width: 260px;
-        height: 320px;
-    }
-    
-    .texto {
-        margin-top: 4rem;
-    }
-    
-    .texto h1 {
-        font-size: 1.6rem;
-    }
-    
-    .texto p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-    
-    .part3 h1 {
-        font-size: 1.5rem;
-        margin: 25px 0;
-    }
-    
-    .flip-box-front h3 {
-        font-size: 1.1rem;
-    }
-    
-    .flip-box-back p {
-        font-size: 0.85rem;
-    }
-    
-    button {
-        padding: 6px 30px;
-        font-size: 13px;
-    }
-    
-    #scroll-to img {
-        width: 30px;
-    }
-}
-
-
-
-
-
-
-
-/* Celulares Pequenos (até 359px) */
-@media (max-width: 359px) {
-    .flip-box {
-        width: 240px;
-        height: 300px;
-    }
-    
-    .texto h1 {
-        font-size: 1.4rem;
-    }
-    
-    .texto p {
-        font-size: 0.85rem;
-    }
-    
-    .part3 h1 {
-        font-size: 1.3rem;
-    }
-    
+  
     .content-container {
-        padding: 15px 10px;
+      padding: 20px ;
     }
-    
+  
+    .flip-box-front h3 {
+      font-size: 1.1rem;
+    }
+  
     .flip-box-back p {
-        font-size: 0.8rem;
+      font-size: 0.85rem;
     }
+  
+    button {
+      padding: 6px 30px;
+      font-size: 13px;
+    }
+  
+   
+  
     
     .footer-content {
         display: flex;
@@ -835,4 +668,35 @@ p {
         font-size: 18px; /* Ajuste do tamanho do texto */
         line-height: 1.5; /* Melhor espaçamento entre linhas */
     }
-}
+    .icones {
+        display: flex; /* Aplica o layout flexbox */
+        justify-content: center; /* Centraliza os ícones horizontalmente */
+        align-items: center; /* Centraliza os ícones verticalmente */
+        gap: 10px; /* Espaçamento entre os ícones */
+        margin-right: 45px;
+    }
+    
+    .icones a {
+        font-size: 27px; /* Tamanho dos ícones */
+        color: #f7f6f6; /* Cor dos ícones (ajuste se necessário) */
+        text-decoration: none; /* Remove sublinhado nos links */
+        margin-bottom: 15px;
+    }
+
+
+    
+
+    #scroll-to {
+        bottom: 10px; /* Ajusta a distância do rodapé */
+        left: 290px; /* Move a seta para a esquerda */
+        right: auto; /* Remove a posição à direita */
+        padding: 8px; /* Reduz o espaçamento interno */
+    }
+
+    #scroll-to img {
+        width: 30px; /* Reduz o tamanho da seta */
+    }
+  }
+  
+
+  
