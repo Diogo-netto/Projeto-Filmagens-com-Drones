@@ -26,12 +26,18 @@ body::-webkit-scrollbar {
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
+     background: linear-gradient(135deg, 
+    #000000 0%, 
+    #0a2e0a 30%, 
+    #0d420d 50%, 
+    #0a2e0a 70%, 
+    #000000 100%);
 }
 
 /* Estilo da logo com animação de hover */
 .logo {
     padding: 0.3125rem 3.125rem;
-    margin-top: 25px;
+    margin-top: 5px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -44,13 +50,14 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 5px;
+    
     
 }
 
 .menu a {
     text-decoration: none;
-    padding: 2.1875rem; /* 35px */
+    padding: 0px 55px; /* 35px */
     transition: transform 0.3s ease-in-out color 0.3s ease-in-out;
     cursor: pointer;
     font-weight: 700;
@@ -66,7 +73,6 @@ body::-webkit-scrollbar {
 
   
 .menu a:hover {
-    transform: scale(1.2);
     color: #139702;
 }
 
@@ -104,9 +110,6 @@ body::-webkit-scrollbar {
     color: #139702;
 }
 
-.dropdown-content span a.especial:hover {
-    color: darkblue;
-}
 
 
 
@@ -164,68 +167,102 @@ body::-webkit-scrollbar {
 
 
 
-/* Botão */
+/* Estilo do Footer */
+.footer {
+    width: 100%; /* Garante que ocupe toda a largura da tela */
+    background: linear-gradient(135deg, 
+        #000000 0%, 
+        #0a2e0a 30%, 
+        #0d420d 50%, 
+        #0a2e0a 70%, 
+        #000000 100%);
+    color: white; 
+    padding: 20px 30px;
+    text-align: center;
+    position: relative; 
+    z-index: 10;
+    box-sizing: border-box;
+}
 
-.cta-container {
+/* Flexbox que distribui o conteúdo */
+.footer-content {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 95%;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 80px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* para evitar quebra em telas pequenas */
-    gap: 15em; /* espaçamento entre o botão e os links */
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
-.btn {
-    text-align: center;
-    margin-top: 2rem;
+
+/* Logo */
+.footer-content img {
+    width: 90px;
 }
 
-.btn button {
-    padding: 1rem 2rem;
-    font-weight: 600;
-    border: 2px solid #151515;
-    border-radius: 1.5625rem;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+/* Texto centralizado */
+.footer-content p {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 49px;
 }
 
-.btn button:hover {
-    background-color: #139702;
-    color: white;
-    border-color: #139702;
-}
 
-/* Links na tela */
-.link-container {
-    display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    margin-top: 2rem;
-}
-
-.link-container a {
+/* Links com ícones */
+.footer-link {
     color: white;
     text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s ease;
+    font-size: 24px;
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+ 
 }
 
-.link-container a:hover {
-    color: #139702;
+.footer-link:hover {
+    transform: scale(1.2);
 }
 
-/* Ícones */
-.fa-regular, .fa-brands {
-    padding: 0.3125rem;
-    font-size: 1.1875rem;
-    color: white;
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-content p {
+        margin-right: 25px;
+       
+    }
+
+    .footer-content img {
+        margin-left: 15px;
+    }
+
+    .footer-text {
+        order: 2;
+    }
+
+    .footer-logo {
+        order: 1;
+    }
+
+    .footer-icons {
+        order: 3;
+    }
 }
 
-a:hover .fa-regular,
-a:hover .fa-brands {
-    color: green;
-}
+
+
+
 
 
 
@@ -269,22 +306,6 @@ a:hover .fa-brands {
       padding: 1.5rem;
     }
   
-    .cta-container, .btn button {
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-      margin-right: 190px;
-    }
-  
-    .cta-container, .link-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-
 
     .menu .dropdown-content a {
         font-size: 15px;
@@ -303,12 +324,7 @@ a:hover .fa-brands {
             #0d420d 50%, 
             #0a2e0a 70%, 
             #000000 100%);
-    
-   
     }
-
-
-
     
   }
   
